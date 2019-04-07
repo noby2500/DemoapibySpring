@@ -1,7 +1,6 @@
 package com.example.demo.Controller;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -72,5 +71,15 @@ public class TestController {
 		return resmo;
 	}
 	
+	//addheaders
+	@GetMapping(value = "/inquiry-test/id/{id}",headers = { "Authorization", "Accept-Language"})	
+	public @ResponseBody Object inquirygetbypathListReqtokenandlang(@PathVariable(value = "id", required = false) String id) {
+		//inquirygetbypathListReqtokenandlang
+		TestResbyidModel  resmo =new TestResbyidModel();
+		resmo.setId(id);
+		resmo.setCode("200");
+		resmo.setStatus("Success");
+		return resmo;
+	}
 }
 
